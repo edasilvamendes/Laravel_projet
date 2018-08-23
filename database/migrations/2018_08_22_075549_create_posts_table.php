@@ -16,21 +16,15 @@ class CreatePostsTable extends Migration
         Schema::create('posts', function (Blueprint $table) {
             $table->increments('id');
 
-            $table->enum('post_type', ['formation', 'stage'])->default('formation'); // check
-            $table->string('title', 100); // varchar
-            $table->longText('description');
-            $table->dateTime('begin_date');
-            $table->dateTime('end_date');
-            $table->float('price');
-            $table->integer('max_students');
+            $table->enum('post_type', ['formation', 'stage'])->default('formation'); 
+            $table->string('title', 100);
+            $table->longText('description')->nullable();
 
+            $table->dateTime('begin_date')->nullable();
+            $table->dateTime('end_date')->nullable();
 
-            //OTHER SOLUTION
-            $table->unsignedInteger('id_category');
-            $table->foreign('id_category')->references('id')->on('categories')->onDelete('cascade');
-
-            $table->unsignedInteger('id_picture')->nullable();
-            $table->foreign('id_picture')->references('id')->on('pictures')->onDelete('cascade');
+            $table->unsignedDecimal('price', 6, 2)->nullable();
+            $table->unsignedDecimal('max_students')->nullable();
 
             $table->timestamps();
         });
