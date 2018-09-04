@@ -13,4 +13,5 @@ class PostTableSeeder extends Seeder
     {
         factory(App\Post::class, 30)->create();
     }
+
 }

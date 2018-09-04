@@ -11,6 +11,13 @@
 |
 */
 
-Route::get('/', function () {
+/*Route::get('/', function () {
     return view('welcome');
-});
+});*/
+
+// Index Page (welcome page)
+Route::get('/', 'FrontController@index');
+
+// Routing pour les pages formations/stages
+Route::get('/formation', 'FrontController@showPostByFormation')->where(['id' => '[0-9]+']);
+Route::get('/stage', 'FrontController@showPostByStage')->where(['id' => '[0-9]+']);
