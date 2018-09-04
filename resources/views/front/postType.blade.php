@@ -1,8 +1,5 @@
 @extends('layouts.master')
 
-<li>test</li>
-
-
 @section('content')
     @forelse($posts as $post)
         <ul>

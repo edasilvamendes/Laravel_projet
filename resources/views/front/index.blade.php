@@ -16,7 +16,11 @@
     @forelse($posts as $post)
         <ul>
             <li>{{$post->post_type}}</li>
-            <li>{{$post->title}}</li>
+                @if($post->post_type === "formation")
+                    <li><a href="{{url('formation', $post->id)}}">{{$post->title}}</a></li>
+                @elseif($post->post_type === "stage")
+                    <li><a href="{{url('stage', $post->id)}}">{{$post->title}}</a></li>
+                @endif
             <li>{{$post->description}}</li>
         </ul>
         @empty

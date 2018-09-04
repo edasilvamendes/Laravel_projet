@@ -28,6 +28,18 @@ class FrontController extends Controller
     	return view('front.postType', ['posts' => $posts]);
     }
 
+    // Récupère le post formation par rapport à l'id
+    public function showPostByOneFormation(int $id) {
+        $onePost = Post::find($id);
+    	return view('front.onePostType', ['onePost' => $onePost]);
+    }
+
+    // Récupère le post stage par rapport à l'id
+    public function showPostByOneStage(int $id) {
+        $onePost = Post::find($id);
+    	return view('front.onePostType', ['onePost' => $onePost]);
+    }
+
 }
 
 

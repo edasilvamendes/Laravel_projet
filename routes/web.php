@@ -11,13 +11,13 @@
 |
 */
 
-/*Route::get('/', function () {
-    return view('welcome');
-});*/
-
 // Index Page (welcome page)
 Route::get('/', 'FrontController@index');
 
-// Routing pour les pages formations/stages
+// Routing pour les pages formations/stages (global)
 Route::get('/formation', 'FrontController@showPostByFormation')->where(['id' => '[0-9]+']);
 Route::get('/stage', 'FrontController@showPostByStage')->where(['id' => '[0-9]+']);
+
+// Routing pour une page formation/stage (detail)
+Route::get('/formation/{id}', 'FrontController@showPostByOneFormation')->where(['id' => '[0-9]+']);
+Route::get('/stage/{id}', 'FrontController@showPostByOneStage')->where(['id' => '[0-9]+']);
