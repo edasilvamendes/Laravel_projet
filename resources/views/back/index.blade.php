@@ -1,17 +1,5 @@
 @extends('layouts.master')
 
-<!-- HEADER -->
-<header>
-    <h1>Formations/Stages</h1>
-    <div>
-        <ul>
-            <li><a href="{{url('/')}}">Accueil</a></li>
-            <li><a href="{{url('formation')}}">Formation</a></li>
-            <li><a href="{{url('stage')}}">Stage</a></li>
-            <li><a href="{{url('contact')}}">Contact</a></li>
-        </ul>
-</header>
-
 <?php
     if (Auth::check()) { 
         ?>
@@ -38,15 +26,6 @@
 @endsection
 
 
-<!-- 
-*
-*
-*
-* ICI AJOUT DU FOOTER (MENU EQUIVALENT AU HEADER)
-* ICI AJOUT EGALEMENT DU MOTEUR DE RECHERCHE
-*
-**
--->
 
 
 
