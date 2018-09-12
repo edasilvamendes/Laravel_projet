@@ -14,8 +14,8 @@ class CreatePicturesAlterTable extends Migration
     public function up()
     {
         Schema::table('pictures', function (Blueprint $table) {
-            $table->unsignedInteger('id_post')->nullable();
-            $table->foreign('id_post')->references('id')->on('posts')->onDelete('SET NULL');
+            $table->unsignedInteger('post_id')->nullable();
+            $table->foreign('post_id')->references('id')->on('posts')->onDelete('SET NULL');
         });
     }
 
@@ -28,8 +28,8 @@ class CreatePicturesAlterTable extends Migration
     {
         //Ajout obligatoire d'une supp de contrainte dans le rollback
         Schema::table('pictures', function (Blueprint $table) {
-            $table->dropForeign(['id_post']);
-            $table->dropColumn('id_post');
+            $table->dropForeign(['post_id']);
+            $table->dropColumn('post_id');
         });
     }
 }

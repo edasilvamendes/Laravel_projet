@@ -24,7 +24,7 @@ class CreatePostsTable extends Migration
             $table->dateTime('end_date')->nullable();
 
             $table->unsignedDecimal('price', 6, 2)->nullable();
-            $table->unsignedDecimal('max_students')->nullable();
+            $table->unsignedSmallInteger('max_students')->nullable();
 
             $table->timestamps();
         });

@@ -10477,3 +10477,34 @@ a.text-dark:focus {
           box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
 }
 
+
+
+
+
+/* ADD CSS */
+.flex {
+  display: flex; }
+
+.title {
+  justify-content: flex-end; }
+
+.header {
+  border-bottom: 1px solid #000;
+  background-color: #FFF; }
+
+.navbar-toggle {
+  background-color: transparent;
+  border: none; }
+
+.navbar-toggle a {
+  padding-left: 20px;
+  padding-right: 20px;
+  text-transform: uppercase; }
+
+section.home {
+  display: flex; 
+  flex-direction: row; }
+
+.left-content {
+  width: 70%;
+  flex-direction: column; }

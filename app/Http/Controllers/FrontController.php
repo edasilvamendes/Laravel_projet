@@ -40,6 +40,15 @@ class FrontController extends Controller
     	return view('front.onePostType', ['onePost' => $onePost]);
     }
 
+    public function showResearch(Request $request){
+        $query = $request->search;
+        $posts = Post::where('title', 'LIKE', '%' . $query . '%')
+            ->orWhere('description', 'LIKE', '%' . $query . '%')
+            ->orWhere('post_type', 'LIKE', '%' . $query . '%')
+            ->paginate(5);
+        return view('front.search', ['posts' => $posts]); 
+    }
+
 }
 
 
