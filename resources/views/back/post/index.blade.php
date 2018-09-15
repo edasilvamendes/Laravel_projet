@@ -8,6 +8,8 @@
 
     {{$posts->links()}}
 
+    @include('back.post.partials.flash')
+
     <table class="post-table">
 
         <thead>

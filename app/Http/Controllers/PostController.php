@@ -67,7 +67,7 @@ class PostController extends Controller
 
         $post->save();
 
-        return redirect()->route('post.index')->with('message', 'success');
+        return redirect()->route('post.index')->with('message', 'Le post a bien été ajouté');
     }
 
     /**
@@ -126,7 +126,7 @@ class PostController extends Controller
 
         }
 
-        return redirect()->route('post.index')->with('message', 'success');
+        return redirect()->route('post.index')->with('message', 'Le post a bien été mise à jour');
     }
 
     /**
@@ -139,7 +139,7 @@ class PostController extends Controller
     {
         $post = Post::find($id);
         $post->delete();
-        return redirect()->route('post.index')->with('message', 'success for the delete');
+        return redirect()->route('post.index')->with('message', 'Le post a bien été supprimé');
     }
 
 }
