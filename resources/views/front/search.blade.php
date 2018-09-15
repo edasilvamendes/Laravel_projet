@@ -2,8 +2,7 @@
 
 @section('content')
     <section class="search">
-    	
-   
+    
         <div class="left-content">
         	{{$posts->links()}}
             @forelse($posts as $post)
