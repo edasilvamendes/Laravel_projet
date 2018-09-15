@@ -11,6 +11,9 @@ use Storage;
 
 class PostController extends Controller
 {
+
+    private $paginate = 10;
+
     /**
      * Display a listing of the resource.
      *
@@ -18,7 +21,7 @@ class PostController extends Controller
      */
     public function index()
     {
-        $posts = Post::paginate(5);
+        $posts = Post::orderBy('created_at', 'desc')->with('picture', 'category')->paginate($this->paginate); 
         return view('back.post.index', ['posts' => $posts]);
     }
 
@@ -51,11 +54,12 @@ class PostController extends Controller
             'price' => 'integer',
             'max_students' => 'integer',
             'id_category' => 'integer',
+            'picture' => 'image|max:3000',
         ]);
         
         $post = Post::create($request->all());
 
-        $link = $request->file('picture')->store('images');
+        $link = $request->file('picture')->store('./');
 
         $post->picture()->create([
             'link' => $link
@@ -114,7 +118,7 @@ class PostController extends Controller
                 $post->picture()->delete(); //Supprime l'information en base
             }
 
-            $link = $request->file('picture')->store('images');
+            $link = $request->file('picture')->store('./');
 
             $post->picture()->create([
                 'link' => $link

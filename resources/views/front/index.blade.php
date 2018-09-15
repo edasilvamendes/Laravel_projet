@@ -1,38 +1,38 @@
 @extends('layouts.master')
 
-<?php
-    if (Auth::check()) { 
-        ?>
-            <a href="{{url('/login')}}">Admin</a>
-            <a href="{{url('/logout')}}">Logout</a>
-        <?php
-    }
-?>
-
 @section('content')
     <section class="home">
-
-        <div class="left-content flex">
+        <div class="left-content">
             @forelse($posts as $post)
-            <ul>
-                <li>{{$post->post_type}}</li>
-                    @if($post->post_type === "formation")
-                        <li><a href="{{url('formation', $post->id)}}">{{$post->title}}</a></li>
-                    @elseif($post->post_type === "stage")
-                        <li><a href="{{url('stage', $post->id)}}">{{$post->title}}</a></li>
-                    @endif
-                <li>{{$post->description}}</li>
-            </ul>
+                <div class="child-item">
+                    <div class="left-item">
+                        @if($post->picture)
+                            <img class="image" src="{{url('images', $post->picture->link)}}" alt="">
+                        @endif
+                    </div>
+                
+                    <div class="right-item">
+                        @if($post->post_type === "formation")
+                        <h2><a href="{{url('formation', $post->id)}}">{{$post->title}}</a></h2>
+                        @elseif($post->post_type === "stage")
+                        <h2><a href="{{url('stage', $post->id)}}">{{$post->title}}</a></h2>
+                        @endif
+                        <span>{{$post->post_type}}</span>
+                        <p>{{$post->description}}</p>
+                        <span>Date de début: {{$post->begin_date}}</span>
+                    </div>
+                </div>
             @empty
-                <li>Aucun posts</li>
+                Aucun post
             @endforelse
         </div>
 
-        <div class="right-content flex">
-            <form method="get" action="{{route('search')}}" enctype="multipart/form-data">
+        <div class="right-content">
+            <form method="get" action="{{route('search')}}" enctype="multipart/form-data" class="form-search">
                 @csrf
-                <input name="search" type="search" placeholder="Search" aria-label="Search">
-                <button type="submit">Search</button>
+                <label>Moteur de recherche</label>
+                <input name="search" type="search" placeholder="Rechercher" aria-label="Search">
+                <button type="submit">Rechercher</button>
             </form>
         </div>
 

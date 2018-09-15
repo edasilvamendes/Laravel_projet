@@ -12,23 +12,35 @@
 
 <body>
 	<div class="container-fluid">
+
 		<div class="row header">
-			<div class="col-md-12">
-				<h1 class="title flex">Formations/Stages</h1>
+			<div class="col-md-12 content-menu">
 				@include('partials.menu')
+
+				<?php
+					if (Auth::check()) { 
+				        ?>
+					        <div class="content-admin">
+					            <a href="{{url('/login')}}">Admin | </a>
+					            <a href="{{url('/logout')}}">Logout</a>
+					        </div>
+				        <?php
+			    	}
+			    ?>
 			</div>
 		</div>
-		<div class="row content-page">
+		<div class="row content-page content">
 			<div class="col-md-12">
 				@yield('content')
 			</div>
 		</div>
+		<div class="row footer">
+			<div class="col-md-12 content-menu">
+				@include('partials.menu')
+			</div>
+		</div>
 	</div>
 
-	<footer>
-		@include('partials.menu')
-	</footer>
-	
 	@section('scripts')
 	<script src="{{asset('js/app.js')}}"></script>
 	@show
