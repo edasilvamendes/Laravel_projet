@@ -20,7 +20,9 @@ class PostTableSeeder extends Seeder
     		$link = str_random(12) . '.jpg';
     		$file = file_get_contents('http://picsum.photos/250/250?image=' . rand(1, 9));
             Storage::disk('local')->put($link, $file);
-            $post->picture()->create();
+            $post->picture()->create([
+                'link' => $link
+            ]);
             $post->save();
 
     	});

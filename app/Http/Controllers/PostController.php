@@ -55,6 +55,7 @@ class PostController extends Controller
             'max_students' => 'integer',
             'id_category' => 'integer',
             'picture' => 'image|max:3000',
+            'status' => 'boolean'
         ]);
         
         $post = Post::create($request->all());

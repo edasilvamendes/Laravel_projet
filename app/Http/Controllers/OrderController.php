@@ -29,7 +29,7 @@ class OrderController extends Controller
             'email' => 'required',
             'description' => 'required',
         ]);
-
+        
         $email = $request->input('email');
         $description = $request->input('description');
 

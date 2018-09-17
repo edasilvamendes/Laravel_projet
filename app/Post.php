@@ -8,7 +8,7 @@ class Post extends Model
 {
     
     protected $fillable = [
-    	'post_type', 'title', 'description', 'begin_date', 'end_date', 'price', 'max_students', 'id_category'
+    	'post_type', 'title', 'description', 'begin_date', 'end_date', 'price', 'max_students', 'id_category', 'status'
     ];
 
     public function category(){

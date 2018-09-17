@@ -20,6 +20,7 @@
                 <th>Date de fin</th>
                 <th>Prix</th>
                 <th>Etudiant max</th>
+                <th>Status</th>
 
                 <th>Show</th>
                 <th>Edit</th>
@@ -42,6 +43,12 @@
                 <td>{{$post->end_date}}</td>
                 <td>{{$post->price}}</td>
                 <td>{{$post->max_students}}</td>
+
+                @if($post->status === 0) 
+                    <td>Non</td>
+                @else 
+                    <td>Oui</td>
+                @endif
 
                 <td><a href="{{route('post.show', $post->id)}}">Show</a></td>
                 <td><a href="{{route('post.edit', $post->id)}}">Edit</a></td>

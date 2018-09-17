@@ -26,6 +26,8 @@ class CreatePostsTable extends Migration
             $table->unsignedDecimal('price', 6, 2)->nullable();
             $table->unsignedSmallInteger('max_students')->nullable();
 
+            $table->boolean('status')->default(0);
+
             $table->timestamps();
         });
     }

@@ -11,6 +11,7 @@ $factory->define(App\Post::class, function (Faker $faker) {
         'begin_date' => $faker->dateTime(),
         'end_date' => $faker->dateTime(),
         'price' => $faker->randomFloat($nbMaxDecimals = 2, $min = 0, $max = 9000.00),
+        'status' => true,
         'max_students' => $faker->numberBetween(5, 50),
     ];
 });

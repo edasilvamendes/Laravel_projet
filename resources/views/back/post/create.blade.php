@@ -88,6 +88,13 @@
 	                <input class="file" type="file" name="picture">
 	                @if($errors->has('picture')) <span class="error bg-warning text-warning">{{$errors->first('picture')}}</span> @endif
 	            </div>
+	            <br/>
+	            <div class="input-radio">
+            		<label>Status</label>
+		            <input type="radio" @if(old('status')=='published') checked @endif name="status" value="1" checked>Publier
+		            <input type="radio" @if(old('status')=='unpublished') checked @endif name="status" value="0">Dépulier<br>
+	            </div>
+
 				<input type="submit" value="Ajouter le post" />
 			</form>
 		</div>
