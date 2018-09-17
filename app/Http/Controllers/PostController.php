@@ -8,6 +8,7 @@ use App\Post; //import des alias
 use App\Picture;
 use App\Category;
 use Storage;
+use Carbon\Carbon;
 
 class PostController extends Controller
 {
@@ -22,6 +23,12 @@ class PostController extends Controller
     public function index()
     {
         $posts = Post::orderBy('created_at', 'desc')->with('picture', 'category')->paginate($this->paginate); 
+
+        foreach($posts as $post){
+            $post->begin_date = Carbon::parse($post->begin_date)->format('Y-m-d');
+            $post->end_date = Carbon::parse($post->end_date)->format('Y-m-d');
+        }
+
         return view('back.post.index', ['posts' => $posts]);
     }
 
