@@ -10729,7 +10729,8 @@ button {
   display: flex;
 }
 
-.content .create-edit-post {
+.content .create-edit-post,
+.content .contact {
   width: 30%;
   margin: 0 auto;
   background-color: #FFF;
@@ -10743,11 +10744,13 @@ button {
   margin-bottom: 40px;
 }
 
-.content .create-edit-post .col-md-12 {
+.content .create-edit-post .col-md-12,
+.content .contact .col-md-12 {
   padding: 40px;
 }
 
-.content .create-edit-post .col-md-12 .content-input {
+.content .create-edit-post .col-md-12 .content-input,
+.content .contact .col-md-12 .content-input {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -10758,12 +10761,16 @@ button {
 }
 
 .content .create-edit-post .col-md-12 .content-input .content-left-input,
-.content .create-edit-post .col-md-12 .content-input .content-right-input {
+.content .create-edit-post .col-md-12 .content-input .content-right-input,
+.content .contact .col-md-12 .content-input .content-left-input,
+.content .contact .col-md-12 .content-input .content-right-input {
   width: 50%;
 }
 
 .content .create-edit-post .col-md-12 .content-input .content-left-input label,
-.content .create-edit-post .col-md-12 .content-input .content-right-input label {
+.content .create-edit-post .col-md-12 .content-input .content-right-input label,
+.content .contact .col-md-12 .content-input .content-left-input label,
+.content .contact .col-md-12 .content-input .content-right-input label {
   margin-right: 20px;
 }
 
@@ -10772,14 +10779,21 @@ button {
 .content .create-edit-post .col-md-12 .content-input .content-left-input select,
 .content .create-edit-post .col-md-12 .content-input .content-right-input input,
 .content .create-edit-post .col-md-12 .content-input .content-right-input textarea,
-.content .create-edit-post .col-md-12 .content-input .content-right-input select {
+.content .create-edit-post .col-md-12 .content-input .content-right-input select,
+.content .contact .col-md-12 .content-input .content-left-input input,
+.content .contact .col-md-12 .content-input .content-left-input textarea,
+.content .contact .col-md-12 .content-input .content-left-input select,
+.content .contact .col-md-12 .content-input .content-right-input input,
+.content .contact .col-md-12 .content-input .content-right-input textarea,
+.content .contact .col-md-12 .content-input .content-right-input select {
   width: 90%;
   height: 40px;
   padding-left: 5px;
   border: 1px solid #BDBDBD;
 }
 
-.content .create-edit-post .col-md-12 input[type="submit"] {
+.content .create-edit-post .col-md-12 input[type="submit"],
+.content .contact .col-md-12 input[type="submit"] {
   background-color: #0091EA;
   border: none;
   color: #FFF;
@@ -10788,11 +10802,13 @@ button {
   padding: 5px 10px 5px 10px;
 }
 
-.content .create-edit-post .col-md-12 select {
+.content .create-edit-post .col-md-12 select,
+.content .contact .col-md-12 select {
   margin-bottom: 10px;
 }
 
-.content .create-edit-post .col-md-12 .input-radio input {
+.content .create-edit-post .col-md-12 .input-radio input,
+.content .contact .col-md-12 .input-radio input {
   margin-left: 10px;
   margin-right: 5px;
 }

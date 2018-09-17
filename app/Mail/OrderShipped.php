@@ -18,9 +18,10 @@ class OrderShipped extends Mailable
      * @return void
     */
 
-    public function __construct()
+    public function __construct($email, $description)
     {
-        //
+        $this->email = $email;
+        $this->description = $description;
     }
 
     /**
@@ -31,8 +32,9 @@ class OrderShipped extends Mailable
 
     public function build()
     {
-        return $this->from('personne@gmail.com')
-            ->view('emails.contact');
+        return $this->from(['address' => 'personne@gmail.com'])
+            ->subject('Contact Laravel Project')
+            ->view('emails.contact', ['email' => $this->email , 'description' => $this->description]);
     }
 
 }

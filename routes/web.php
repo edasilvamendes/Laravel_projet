@@ -18,12 +18,12 @@
 Route::get('/', 'FrontController@index');
 
 // Routing pour les pages formations/stages (global)
-Route::get('/formation', 'FrontController@showPostByFormation')->where(['id' => '[0-9]+']);
-Route::get('/stage', 'FrontController@showPostByStage')->where(['id' => '[0-9]+']);
+Route::get('formation', 'FrontController@showPostByFormation')->where(['id' => '[0-9]+']);
+Route::get('stage', 'FrontController@showPostByStage')->where(['id' => '[0-9]+']);
 
 // Routing pour une page formation/stage (detail)
-Route::get('/formation/{id}', 'FrontController@showPostByOneFormation')->where(['id' => '[0-9]+']);
-Route::get('/stage/{id}', 'FrontController@showPostByOneStage')->where(['id' => '[0-9]+']);
+Route::get('formation/{id}', 'FrontController@showPostByOneFormation')->where(['id' => '[0-9]+']);
+Route::get('stage/{id}', 'FrontController@showPostByOneStage')->where(['id' => '[0-9]+']);
 
 // Route autogenere pour l'auth (redirection)
 Route::get('/home', 'HomeController@index')->name('home');
@@ -35,11 +35,11 @@ Route::get('/home', 'HomeController@index')->name('home');
 // Routes Sécu | Index Admin
 Route::resource('admin/post', 'PostController')->middleware('auth');
 // Route destroy login
-Route::get('/logout', 'Auth\LoginController@logout');
+Route::get('logout', 'Auth\LoginController@logout');
 // SHOW
-Route::get('admin/post/{id}', 'PostController@show')->name('post.show'); //Route::get('post/{id}', 'PostController@show')->name('post.show');
+//Route::get('admin/post/{id}', 'PostController@show')->name('post.show'); //Route::get('post/{id}', 'PostController@show')->name('post.show');
 // EDIT
-Route::get('admin/post/edit/{id}', 'PostController@edit')->name('post.edit'); //Route::get('post/edit/{id}', 'PostController@edit')->name('post.edit');
+//Route::get('admin/post/edit/{id}', 'PostController@edit')->name('post.edit'); //Route::get('post/edit/{id}', 'PostController@edit')->name('post.edit');
 
 //Auth Routes
 Auth::routes();
@@ -48,7 +48,7 @@ Auth::routes();
 Route::get('search', 'FrontController@showResearch')->name('search');
 
 // Page contact
-/*
-Route::post('/contact', 'OrderController@index')->name('contact');
-Route::get('/contact', 'OrderController@ship')->name('contact');
-*/
+Route::get('contact', 'OrderController@index');
+Route::post('contact', 'OrderController@ship')->name('contact');
+
+

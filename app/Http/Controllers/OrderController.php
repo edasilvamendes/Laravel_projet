@@ -25,7 +25,16 @@ class OrderController extends Controller
     // Page Contact
     public function ship(Request $request)
     {
-        Mail::to('administrateur@chezmoi.com')->send(new OrderShipped($request->except('_token')));
+         $this->validate($request, [
+            'email' => 'required',
+            'description' => 'required',
+        ]);
+
+        $email = $request->input('email');
+        $description = $request->input('description');
+
+        Mail::to($email)->send(new OrderShipped($email, $description));
+        return redirect()->route('contact')->with('message', 'Le mail a bien été envoyé');
     }
 
 
