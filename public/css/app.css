@@ -10813,6 +10813,19 @@ button {
   margin-right: 5px;
 }
 
+.content .create-edit-post .col-md-12 .image-edit,
+.content .contact .col-md-12 .image-edit {
+  max-width: 250px;
+  max-height: 250px;
+  min-width: 250px;
+  border: 1px solid #E0E0E0;
+  min-height: 250px;
+  -o-object-fit: cover;
+  object-fit: cover;
+  -o-object-position: right top;
+  object-position: right top;
+}
+
 /* HEADER & FOOTER */
 
 .header,

@@ -84,11 +84,9 @@
                     @endforeach
 				</select>
 	
-				<!--
-					@if($post->picture)
-	                    <img class="image" src="{{url('images', $post->picture->link)}}" alt="">
-	                @endif
-            	-->
+				@if($post->picture)
+                    <img class="image-edit" src="{{url('images', $post->picture->link)}}" alt="">
+                @endif
             	
 				<div class="input-file">
 	                <label>File</label>
@@ -103,7 +101,7 @@
 		            <input type="radio" @if($post->status=='0') checked @endif name="status" value="0">Dépulier<br>
 	            </div>
 
-				<input type="submit" value="Ajouter le post" />
+				<input type="submit" value="Editer le post" />
 			</form>
 		</div>
 	</div>
