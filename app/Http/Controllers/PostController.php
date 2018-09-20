@@ -67,7 +67,7 @@ class PostController extends Controller
         
         $post = Post::create($request->all());
 
-        $link = $request->file('picture')->store('./');
+        $link = $request->file('picture')->store('/');
 
         $post->picture()->create([
             'link' => $link
@@ -126,7 +126,7 @@ class PostController extends Controller
                 $post->picture()->delete(); //Supprime l'information en base
             }
 
-            $link = $request->file('picture')->store('./');
+            $link = $request->file('picture')->store('/');
 
             $post->picture()->create([
                 'link' => $link
@@ -143,9 +143,15 @@ class PostController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy($id, Request $request)
     {
         $post = Post::find($id);
+
+        $picture = $request->file('picture');
+        if($post->picture){
+           Storage::disk('local')->delete($post->picture->link);
+        }
+
         $post->delete();
         return redirect()->route('post.index')->with('message', 'Le post a bien été supprimé');
     }

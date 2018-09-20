@@ -8,7 +8,8 @@ class Picture extends Model
 {
 
 	protected $fillable = [
-		'link'
+		'link',
+		'post_id'
 	];
 
     public function posts() {

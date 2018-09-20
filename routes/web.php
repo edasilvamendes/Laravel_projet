@@ -36,10 +36,6 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::resource('admin/post', 'PostController')->middleware('auth');
 // Route destroy login
 Route::get('logout', 'Auth\LoginController@logout');
-// SHOW
-//Route::get('admin/post/{id}', 'PostController@show')->name('post.show'); //Route::get('post/{id}', 'PostController@show')->name('post.show');
-// EDIT
-//Route::get('admin/post/edit/{id}', 'PostController@edit')->name('post.edit'); //Route::get('post/edit/{id}', 'PostController@edit')->name('post.edit');
 
 //Auth Routes
 Auth::routes();
