@@ -56,12 +56,12 @@ class PostController extends Controller
             'post_type' => 'in:formation,stage',
             'title' => 'required',
             'description' => 'required|string',
-            'begin_date' => 'date',
-            'end_date' => 'date',
-            'price' => 'integer',
-            'max_students' => 'integer',
-            'id_category' => 'integer',
-            'picture' => 'image|max:3000',
+            'begin_date' => 'required|date',
+            'end_date' => 'required|date',
+            'price' => 'required|numeric',
+            'max_students' => 'required|integer',
+            'id_category' => 'required|integer',
+            'picture' => 'required|image|max:3000',
             'status' => 'boolean'
         ]);
         
@@ -112,6 +112,20 @@ class PostController extends Controller
      */
     public function update(Request $request, $id)
     {
+
+        $this->validate($request, [
+            'post_type' => 'in:formation,stage',
+            'title' => 'required',
+            'description' => 'required|string',
+            'begin_date' => 'required|date',
+            'end_date' => 'required|date',
+            'price' => 'required|numeric',
+            'max_students' => 'required|integer',
+            'id_category' => 'required|integer',
+            'picture' => 'image|max:3000',
+            'status' => 'boolean'
+        ]);
+
         //On recup le post souhaité
         $post = Post::find($id);
         //On met a jour les données de ce post

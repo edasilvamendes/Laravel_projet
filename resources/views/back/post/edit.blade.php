@@ -83,6 +83,9 @@
                         <<option {{ ($post->id_category == $id)? 'selected' : '' }}  value="{{$id}}">{{$name}}</option>
                     @endforeach
 				</select>
+				@if($errors->has('id_category')) 
+					<span class="error">{{$errors->first('id_category')}}</span>
+				@endif
 	
 				@if($post->picture)
                     <img class="image-edit" src="{{url('images', $post->picture->link)}}" alt="">
@@ -91,8 +94,9 @@
 				<div class="input-file">
 	                <label>File</label>
 	                <br/>
+
 	                <input class="file" type="file" name="picture">
-	                @if($errors->has('picture')) <span class="error bg-warning text-warning">{{$errors->first('picture')}}</span> @endif
+	                @if($errors->has('picture')) <span class="error">{{$errors->first('picture')}}</span> @endif
 	            </div>
 				<br/>
 	            <div class="input-radio">

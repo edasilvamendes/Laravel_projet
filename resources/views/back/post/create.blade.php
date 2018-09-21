@@ -58,7 +58,7 @@
 					<div class="content-left-input">
 						<label>Prix</label>
 						<br/>
-						<input id="price" type="number" name="price" value="{{old('price')}}" min="0" max="99999.99" placeholder="€">
+						<input id="price" type="number" name="price" value="{{old('price')}}" min="0" step="0.1" max="99999.99" placeholder="€">
 						@if($errors->has('price')) 
 							<span class="error">{{$errors->first('price')}}</span>
 						@endif
@@ -82,11 +82,15 @@
                         <option {{ old('id_category')==$id? 'selected' : '' }} value="{{$id}}">{{$name}}</option>
                     @endforeach
 				</select>
+				@if($errors->has('id_category')) 
+					<span class="error">{{$errors->first('id_category')}}</span>
+				@endif
+
 				<div class="input-file">
 	                <label>File</label>
 	                <br/>
 	                <input class="file" type="file" name="picture">
-	                @if($errors->has('picture')) <span class="error bg-warning text-warning">{{$errors->first('picture')}}</span> @endif
+	                @if($errors->has('picture')) <span class="error">{{$errors->first('picture')}}</span> @endif
 	            </div>
 	            <br/>
 	            <div class="input-radio">
