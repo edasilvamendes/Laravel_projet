@@ -50,14 +50,15 @@
                     <td>Oui</td>
                 @endif
 
-                <td><a href="{{route('post.show', $post->id)}}">Show</a></td>
-                <td><a href="{{route('post.edit', $post->id)}}">Edit</a></td>
+                <td><a href="{{route('post.show', $post->id)}}"><i class="fas fa-eye"></i></a></td>
+                <td><a href="{{route('post.edit', $post->id)}}"><i class="fas fa-edit"></i></a></td>
                 
                 <td>
                     <form class="delete" method="POST" action="{{route('post.destroy', $post->id)}}">
                         {{ method_field('DELETE') }}
                         {{ csrf_field() }}
-                        <input class="btn" type="submit" value="delete">
+
+                        <input class="btn" type="submit" value="Supprimer">
                     </form>
                 </td>
             </tr>
