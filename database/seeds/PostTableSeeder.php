@@ -11,7 +11,7 @@ class PostTableSeeder extends Seeder
      */
     public function run()
     {
-        factory(App\Post::class, 30)->create();
+        //factory(App\Post::class, 30)->create();
 
         Storage::disk('local')->delete(Storage::allFiles());
 

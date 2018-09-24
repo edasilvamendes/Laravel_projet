@@ -87,10 +87,20 @@ $gray: #BDBDBD;
     background-color: $white;
     flex-direction: row; 
 
+    @media screen and (max-width: 1024px) {
+      flex-direction: column;
+    }
+
+
   /* LEFT CONTENT */
     .left-content {
       width: 70%;
       flex-direction: column;
+
+      @media screen and (max-width: 1024px) {
+        width: auto;
+        align-items: center;
+      }
 
       .child-item {
         display: flex;
@@ -100,6 +110,10 @@ $gray: #BDBDBD;
         border-radius: 8px;
         background-color: $white; 
         box-shadow: 7px 5px 5px 7px $gray;
+
+        @media screen and (max-width: 1024px) {
+          flex-direction: column; 
+        }
 
         /*&:last-of-type {
           border-bottom: none;
@@ -115,6 +129,10 @@ $gray: #BDBDBD;
         .left-item {
           display: flex;
           align-items: center;
+
+          @media screen and (max-width: 1024px) {
+            justify-content: center;
+          }
 
           .image {
             max-width: 250px;
@@ -141,6 +159,10 @@ $gray: #BDBDBD;
         width: 30%; 
         justify-content: center;
 
+        @media screen and (max-width: 1024px) {
+          width: auto;
+        }
+
       .form-search {
         width: 80%;
         display: flex;
@@ -151,6 +173,10 @@ $gray: #BDBDBD;
         margin: 20px;
         border-radius: 8px; 
         box-shadow: 7px 5px 5px 7px $gray;
+
+        @media screen and (max-width: 1024px) {
+          height: auto;
+        }
 
         label {
           font-size: 20px; 
@@ -185,6 +211,11 @@ $gray: #BDBDBD;
     box-shadow: 7px 5px 5px 7px $gray;
     margin-top: 20px;
     margin-bottom: 40px;
+
+    @media screen and (max-width: 1024px) {
+      flex-direction: column;
+      width: 70%;
+    }
     
     .col-md-12 {
       padding: 40px;
@@ -192,9 +223,17 @@ $gray: #BDBDBD;
       .content-input {
         display: flex;
         flex-direction: row;
+
+        @media screen and (max-width: 1024px) {
+          flex-direction: column;
+        }
       
         .content-left-input, .content-right-input {
           width: 50%;
+
+          @media screen and (max-width: 1024px) {
+            width: auto;
+          }
 
           label {
              margin-right: 20px; 
@@ -205,6 +244,10 @@ $gray: #BDBDBD;
             height: 40px;
             padding-left: 5px;
             border: 1px solid $gray;
+
+            @media screen and (max-width: 1024px) {
+              width: 100%;
+            }
           }
 
         }
@@ -259,7 +302,7 @@ $gray: #BDBDBD;
       justify-content: space-between;
 
       .content-admin {
-        width: 10%;
+        width: auto;
         display: flex;
         align-items: center;
 
@@ -292,5 +335,7 @@ $gray: #BDBDBD;
   }
 
   .header {
-    height: 50px;
+    height: auto;
   }
+
+

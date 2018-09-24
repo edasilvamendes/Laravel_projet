@@ -15,7 +15,7 @@ class FrontController extends Controller
 
 	// Récupère les posts et limite à 2, le nombre de post sur la page d'accueil
     public function index() {
-        $posts = Post::orderBy('begin_date', 'desc')->with('picture', 'category')->where('status', '1')->limit(2)->get();
+        $posts = Post::orderBy('created_at', 'desc')->with('picture', 'category')->where('status', '1')->limit(2)->get();
 
         foreach($posts as $post){
             $post->begin_date = Carbon::parse($post->begin_date)->format('Y-m-d');
@@ -27,7 +27,7 @@ class FrontController extends Controller
 
     // Récupère les posts de type formation
     public function showPostByFormation() {
-        $posts = Post::where('post_type', '=', 'formation')->where('status', '1')->paginate($this->paginate); 
+        $posts = Post::orderBy('created_at', 'desc')->where('post_type', '=', 'formation')->where('status', '1')->paginate($this->paginate); 
 
         foreach($posts as $post){
             $post->begin_date = Carbon::parse($post->begin_date)->format('Y-m-d');
@@ -39,7 +39,7 @@ class FrontController extends Controller
 
     // Récupère les posts de type stage
     public function showPostByStage() {
-        $posts = Post::where('post_type', '=', 'stage')->where('status', '1')->paginate($this->paginate);
+        $posts = Post::orderBy('created_at', 'desc')->where('post_type', '=', 'stage')->where('status', '1')->paginate($this->paginate);
 
         foreach($posts as $post){
             $post->begin_date = Carbon::parse($post->begin_date)->format('Y-m-d');
@@ -71,7 +71,7 @@ class FrontController extends Controller
 
     public function showResearch(Request $request){
         $query = $request->search;
-        $posts = Post::where('title', 'LIKE', '%' . $query . '%')
+        $posts = Post::orderBy('created_at', 'desc')->where('title', 'LIKE', '%' . $query . '%')
             ->orWhere('description', 'LIKE', '%' . $query . '%')
             ->orWhere('post_type', 'LIKE', '%' . $query . '%')
             ->paginate($this->paginate);

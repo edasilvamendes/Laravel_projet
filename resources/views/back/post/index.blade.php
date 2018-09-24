@@ -10,7 +10,7 @@
 
     @include('back.post.partials.flash')
 
-    <table class="post-table">
+    <table class="post-table table-responsive">
 
         <thead>
             <tr>
@@ -68,6 +68,11 @@
         </tbody>
     </table>
 </section>
+@endsection
+
+@section('scripts')
+    @parent
+    <script src="{{asset('js/confirm.js')}}"></script>
 @endsection
 
 

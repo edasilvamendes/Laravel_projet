@@ -10594,6 +10594,17 @@ button {
   /* LEFT & RIGHT CONTENT */
 }
 
+@media screen and (max-width: 1024px) {
+  .content .home,
+  .content .formation-stage,
+  .content .search {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+
 .content .home .left-content,
 .content .formation-stage .left-content,
 .content .search .left-content {
@@ -10602,6 +10613,17 @@ button {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+}
+
+@media screen and (max-width: 1024px) {
+  .content .home .left-content,
+  .content .formation-stage .left-content,
+  .content .search .left-content {
+    width: auto;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
 }
 
 .content .home .left-content .child-item,
@@ -10620,6 +10642,17 @@ button {
   /*&:last-of-type {
           border-bottom: none;
         }*/
+}
+
+@media screen and (max-width: 1024px) {
+  .content .home .left-content .child-item,
+  .content .formation-stage .left-content .child-item,
+  .content .search .left-content .child-item {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
 }
 
 .content .home .left-content .child-item .right-item,
@@ -10647,6 +10680,16 @@ button {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+@media screen and (max-width: 1024px) {
+  .content .home .left-content .child-item .left-item,
+  .content .formation-stage .left-content .child-item .left-item,
+  .content .search .left-content .child-item .left-item {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
 }
 
 .content .home .left-content .child-item .left-item .image,
@@ -10678,6 +10721,14 @@ button {
           justify-content: center;
 }
 
+@media screen and (max-width: 1024px) {
+  .content .home .right-content,
+  .content .formation-stage .right-content,
+  .content .search .right-content {
+    width: auto;
+  }
+}
+
 .content .home .right-content .form-search,
 .content .formation-stage .right-content .form-search,
 .content .search .right-content .form-search {
@@ -10696,6 +10747,14 @@ button {
   border-radius: 8px;
   -webkit-box-shadow: 7px 5px 5px 7px #BDBDBD;
           box-shadow: 7px 5px 5px 7px #BDBDBD;
+}
+
+@media screen and (max-width: 1024px) {
+  .content .home .right-content .form-search,
+  .content .formation-stage .right-content .form-search,
+  .content .search .right-content .form-search {
+    height: auto;
+  }
 }
 
 .content .home .right-content .form-search label,
@@ -10744,6 +10803,17 @@ button {
   margin-bottom: 40px;
 }
 
+@media screen and (max-width: 1024px) {
+  .content .create-edit-post,
+  .content .contact {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    width: 70%;
+  }
+}
+
 .content .create-edit-post .col-md-12,
 .content .contact .col-md-12 {
   padding: 40px;
@@ -10760,11 +10830,30 @@ button {
           flex-direction: row;
 }
 
+@media screen and (max-width: 1024px) {
+  .content .create-edit-post .col-md-12 .content-input,
+  .content .contact .col-md-12 .content-input {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+
 .content .create-edit-post .col-md-12 .content-input .content-left-input,
 .content .create-edit-post .col-md-12 .content-input .content-right-input,
 .content .contact .col-md-12 .content-input .content-left-input,
 .content .contact .col-md-12 .content-input .content-right-input {
   width: 50%;
+}
+
+@media screen and (max-width: 1024px) {
+  .content .create-edit-post .col-md-12 .content-input .content-left-input,
+  .content .create-edit-post .col-md-12 .content-input .content-right-input,
+  .content .contact .col-md-12 .content-input .content-left-input,
+  .content .contact .col-md-12 .content-input .content-right-input {
+    width: auto;
+  }
 }
 
 .content .create-edit-post .col-md-12 .content-input .content-left-input label,
@@ -10790,6 +10879,23 @@ button {
   height: 40px;
   padding-left: 5px;
   border: 1px solid #BDBDBD;
+}
+
+@media screen and (max-width: 1024px) {
+  .content .create-edit-post .col-md-12 .content-input .content-left-input input,
+  .content .create-edit-post .col-md-12 .content-input .content-left-input textarea,
+  .content .create-edit-post .col-md-12 .content-input .content-left-input select,
+  .content .create-edit-post .col-md-12 .content-input .content-right-input input,
+  .content .create-edit-post .col-md-12 .content-input .content-right-input textarea,
+  .content .create-edit-post .col-md-12 .content-input .content-right-input select,
+  .content .contact .col-md-12 .content-input .content-left-input input,
+  .content .contact .col-md-12 .content-input .content-left-input textarea,
+  .content .contact .col-md-12 .content-input .content-left-input select,
+  .content .contact .col-md-12 .content-input .content-right-input input,
+  .content .contact .col-md-12 .content-input .content-right-input textarea,
+  .content .contact .col-md-12 .content-input .content-right-input select {
+    width: 100%;
+  }
 }
 
 .content .create-edit-post .col-md-12 input[type="submit"],
@@ -10849,7 +10955,7 @@ button {
 
 .header .content-menu .content-admin,
 .footer .content-menu .content-admin {
-  width: 10%;
+  width: auto;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -10883,7 +10989,7 @@ button {
 }
 
 .header {
-  height: 50px;
+  height: auto;
 }
 
 .navbar-laravel {
