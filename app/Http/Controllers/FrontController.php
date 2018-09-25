@@ -18,8 +18,8 @@ class FrontController extends Controller
         $posts = Post::orderBy('created_at', 'desc')->with('picture', 'category')->where('status', '1')->limit(2)->get();
 
         foreach($posts as $post){
-            $post->begin_date = Carbon::parse($post->begin_date)->format('Y-m-d');
-            $post->end_date = Carbon::parse($post->end_date)->format('Y-m-d');
+            $post->begin_date = Carbon::parse($post->begin_date)->format('d/m/Y');
+            $post->end_date = Carbon::parse($post->end_date)->format('d/m/Y');
         }
 
     	return view('front.index', ['posts' => $posts]);
@@ -30,8 +30,8 @@ class FrontController extends Controller
         $posts = Post::orderBy('created_at', 'desc')->where('post_type', '=', 'formation')->where('status', '1')->paginate($this->paginate); 
 
         foreach($posts as $post){
-            $post->begin_date = Carbon::parse($post->begin_date)->format('Y-m-d');
-            $post->end_date = Carbon::parse($post->end_date)->format('Y-m-d');
+            $post->begin_date = Carbon::parse($post->begin_date)->format('d/m/Y');
+            $post->end_date = Carbon::parse($post->end_date)->format('d/m/Y');
         }
 
     	return view('front.postType', ['posts' => $posts]);
@@ -42,8 +42,8 @@ class FrontController extends Controller
         $posts = Post::orderBy('created_at', 'desc')->where('post_type', '=', 'stage')->where('status', '1')->paginate($this->paginate);
 
         foreach($posts as $post){
-            $post->begin_date = Carbon::parse($post->begin_date)->format('Y-m-d');
-            $post->end_date = Carbon::parse($post->end_date)->format('Y-m-d');
+            $post->begin_date = Carbon::parse($post->begin_date)->format('d/m/Y');
+            $post->end_date = Carbon::parse($post->end_date)->format('d/m/Y');
         }
 
     	return view('front.postType', ['posts' => $posts]);
@@ -53,8 +53,8 @@ class FrontController extends Controller
     public function showPostByOneFormation(int $id) {
         $onePost = Post::find($id);
 
-        $onePost->begin_date = Carbon::parse($onePost->begin_date)->format('Y-m-d');
-        $onePost->end_date = Carbon::parse($onePost->end_date)->format('Y-m-d');
+        $onePost->begin_date = Carbon::parse($onePost->begin_date)->format('d/m/Y');
+        $onePost->end_date = Carbon::parse($onePost->end_date)->format('d/m/Y');
 
     	return view('front.onePostType', ['onePost' => $onePost]);
     }
@@ -63,8 +63,8 @@ class FrontController extends Controller
     public function showPostByOneStage(int $id) {
         $onePost = Post::find($id);
 
-        $onePost->begin_date = Carbon::parse($onePost->begin_date)->format('Y-m-d');
-        $onePost->end_date = Carbon::parse($onePost->end_date)->format('Y-m-d');
+        $onePost->begin_date = Carbon::parse($onePost->begin_date)->format('d/m/Y');
+        $onePost->end_date = Carbon::parse($onePost->end_date)->format('d/m/Y');
 
     	return view('front.onePostType', ['onePost' => $onePost]);
     }
@@ -77,8 +77,8 @@ class FrontController extends Controller
             ->paginate($this->paginate);
 
         foreach($posts as $post){
-            $post->begin_date = Carbon::parse($post->begin_date)->format('Y-m-d');
-            $post->end_date = Carbon::parse($post->end_date)->format('Y-m-d');
+            $post->begin_date = Carbon::parse($post->begin_date)->format('d/m/Y');
+            $post->end_date = Carbon::parse($post->end_date)->format('d/m/Y');
         }
         
         return view('front.search', ['posts' => $posts]); 

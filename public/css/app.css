@@ -10532,6 +10532,7 @@ button {
 .content .col-md-12 .show-post .post-table .content-post-table td {
   color: #000;
   text-align: center;
+  width: 24%;
 }
 
 .content .col-md-12 .show-post .post-table .content-post-table td a {
@@ -10990,6 +10991,22 @@ button {
 
 .header {
   height: auto;
+}
+
+.navbar-brand {
+  display: none;
+}
+
+.error {
+  color: red;
+}
+
+.publier {
+  color: green;
+}
+
+.non-publier {
+  color: red;
 }
 
 .navbar-laravel {

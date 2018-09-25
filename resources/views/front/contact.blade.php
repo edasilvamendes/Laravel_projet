@@ -15,7 +15,7 @@
 						<label>Email</label>
 					    <input type="email" name="email">
 					    <br/>
-						<label>Description</label>
+						<label>Message</label>
 						<br/>
 					    <textarea name="description"></textarea>
 					</div>

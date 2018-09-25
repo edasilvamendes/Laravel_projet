@@ -102,7 +102,7 @@
 	            <div class="input-radio">
             		<label>Status</label>
 		            <input type="radio" @if($post->status=='1') checked @endif name="status" value="1" checked>Publier
-		            <input type="radio" @if($post->status=='0') checked @endif name="status" value="0">Dépulier<br>
+		            <input type="radio" @if($post->status=='0') checked @endif name="status" value="0">Non publié<br>
 	            </div>
 
 				<input type="submit" value="Editer le post" />

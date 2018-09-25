@@ -25,8 +25,8 @@ class PostController extends Controller
         $posts = Post::orderBy('created_at', 'desc')->with('picture', 'category')->paginate($this->paginate); 
 
         foreach($posts as $post){
-            $post->begin_date = Carbon::parse($post->begin_date)->format('Y-m-d');
-            $post->end_date = Carbon::parse($post->end_date)->format('Y-m-d');
+            $post->begin_date = Carbon::parse($post->begin_date)->format('d/m/Y');
+            $post->end_date = Carbon::parse($post->end_date)->format('d/m/Y');
         }
 
         return view('back.post.index', ['posts' => $posts]);
@@ -87,6 +87,10 @@ class PostController extends Controller
     public function show($id)
     {
         $post = Post::find($id);
+
+        $post->begin_date = Carbon::parse($post->begin_date)->format('d/m/Y');
+        $post->end_date = Carbon::parse($post->end_date)->format('d/m/Y');
+
         return view('back.post.show', ['post' => $post]);
     }
 

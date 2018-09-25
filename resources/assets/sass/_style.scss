@@ -27,6 +27,7 @@ $gray: #BDBDBD;
           td {
             color: $black;
             text-align: center;
+            width: 24%;
 
             a {
               color: $black;
@@ -338,4 +339,18 @@ $gray: #BDBDBD;
     height: auto;
   }
 
+  .navbar-brand {
+    display: none; 
+  }
 
+  .error {
+    color: red;
+  }
+
+  .publier {
+    color: green;
+  }
+
+  .non-publier {
+    color: red;
+  }

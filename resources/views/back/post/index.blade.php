@@ -45,9 +45,9 @@
                 <td>{{$post->max_students}}</td>
 
                 @if($post->status === 0) 
-                    <td>Non</td>
+                    <td><i class="fas fa-circle non-publier"></i></td>
                 @else 
-                    <td>Oui</td>
+                    <td><i class="fas fa-circle publier"></i></td>
                 @endif
 
                 <td><a href="{{route('post.show', $post->id)}}"><i class="fas fa-eye"></i></a></td>

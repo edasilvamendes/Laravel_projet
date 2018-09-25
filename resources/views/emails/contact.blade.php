@@ -1,9 +1,9 @@
 <html>
 	<body>
-		E-mail:
+		E-mail :
 		{{$email}}
 		<br/>
-		Description:
+		Message :
 		{{$description}}
 	</body>
 </html>
